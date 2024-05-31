@@ -47,6 +47,7 @@ df_ions_color = df_ions_color.set_index('ions_type', drop=False)
 # Perform some preprocessing
 # ------------------------------------------------------------------------------
 # generate the information list to be searched
+# print("df_web_info", df_web_info)
 search_info_list = []
 # and generate multiple default dicts of web information
 web_info_dict = defaultdict(dict) # dict of protein dict of r_seq dict of r_seq info dict (species-sample : protein : r_seq : {'partition': partition, 'charge': charge, 'calcmy': calcmy})
@@ -66,7 +67,14 @@ for row in df_web_info.itertuples():
 
     # generate protein_info_dict
     # protein_info_dict["-".join([species, sample])].add(protein)
-    web_info_dict["-".join([species, sample])][protein] = {r_seq : {'partition': partition, 'charge': charge, 'calcmy': calcmy}}
+    # web_info_dict["-".join([species, sample])][protein] = {r_seq : {'partition': partition, 'charge': charge, 'calcmy': calcmy}}
+    # print("r_seq", r_seq)
+    ss = "-".join([species, sample])
+    if ss not in web_info_dict or protein not in web_info_dict[ss]:
+        web_info_dict[ss][protein] = {r_seq : {'partition': partition, 'charge': charge, 'calcmy': calcmy}}
+    else:
+        web_info_dict[ss][protein][r_seq] = {'partition': partition, 'charge': charge, 'calcmy': calcmy}
+    # print("web_info_dict:", web_info_dict)
 
 # print("search_info_list:", search_info_list)
 # print("web_info_dict:", web_info_dict)
@@ -497,7 +505,7 @@ def fillin_search_result(search_result):
     par_seq = web_info_dict["-".join([species, sample])][protein][r_seq]['partition']
     partition_value = par_seq.split(',')[0]
 
-    # print("partition_value", partition_value)
+    print("partition_value", partition_value)
 
     # generate default charge value (The first charge value in the excel)
     charge_seq = web_info_dict["-".join([species, sample])][protein][r_seq]['charge']
@@ -703,6 +711,7 @@ def gen_sequence_level(species_path, sample_path, protein):
     species = species_path.split("/")[-1]
     sample = sample_path.split("/")[-1]
     # print("species", species, "sample", sample, "protein", protein)
+    # print("web_info_dict",web_info_dict)
     
     seq_options = {x : x for x in web_info_dict["-".join([species, sample])][protein].keys()}
     # print("seq_options", seq_options)
