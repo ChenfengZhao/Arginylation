@@ -49,13 +49,13 @@ for root, dirs, files in os.walk('.'):
 # read orginal 1website_information.xlsx
 df_webInfo_raw = pd.read_excel('./1website_information.xlsx', sheet_name=0)
 # create a species column in df_webInfo_raw
-spec_raw_lst = []
+# spec_raw_lst = []
 for row in df_webInfo_raw.itertuples():
     protein_raw = row.Protein
-    spec_raw = protein_raw.split(' ')[0].split('_')[-1]
-    spec_raw_lst.append(spec_raw.lower().capitalize().replace('-', '_'))
+    # spec_raw = protein_raw.split(' ')[0].split('_')[-1]
+    # spec_raw_lst.append(spec_raw.lower().capitalize().replace('-', '_'))
 # add the Species column
-df_webInfo_raw['Species'] = spec_raw_lst
+# df_webInfo_raw['Species'] = spec_raw_lst
 
 # print("df_webInfo_raw", df_webInfo_raw)
 
