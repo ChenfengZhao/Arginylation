@@ -22,6 +22,7 @@ layout = dbc.Container([
 
     # First portion (Overview of the website)
     dbc.Row(html.Div([
+        html.P("Arginylation is an essential protein PTM installed by the ATE1 enzyme in mammalian systems. This website included isotopically labeled arginylation sites (peptides) from standard peptides, whole-proteome peptide mixtures, pure proteins, human cells, patient tissues, mouse tissues, etc. Indexed source data of MS1 and MS2 scans are available to download after the selection of a specific sample or species. Source code for website visualization is also available to download from GitHub.", className='my-1'),
         html.P("The differentiation of post-translational vs translational Arg using label-free proteomics is biased to predefined arginylation sites by its nature. Installing unnatural Arg (isotopic Arg) to arginylation sites allows for mass spectrometry identification of posttranslational Arg residues, leading to the unbiased discovery of protein arginylation ex vivo using proteomics profiling.", className='my-1')
     ]), className = 'align-items-center'),
     dbc.Row(html.Div([
