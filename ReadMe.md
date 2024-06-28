@@ -6,8 +6,8 @@
 
 ## Overview
 
-[Add a short paragraph to introduce Arginylation]
-You can either download the source code to run it on your own PC as the following direction, or directly visit [Add the Arginylation website address] for more dataset.
+The website allows searching for sample (cell or tissue), proteins, and peptides. Alternatively, it also allows manual selection of species, sample, protein, peptide, fraction of a sample, charge of a peptide for data visualization. Each MS1 or MS2 scan is available to be selected to view. Mass errors in both MS1 and MS2 can be changed manually with a default value of 20 ppm. MS2 ion types are available for selection with a default of b and y associated irons. This website allows for downloading source MS1 and MS2 data in Excel format at species or sample levels, the downloadable data are organized based on unique peptide sequence, charge, and raw.
+You can either download the source code to run it on your own PC as the following direction, or directly visit [Arginylation website](https://www.arginylation.com) for more dataset.
 ## Requirements
 
 - Recommended OS: macOS (>= 10.13), Linux (e.g. Ubuntu >= 18.04), or Windows (>= 10)
