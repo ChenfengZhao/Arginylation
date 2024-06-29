@@ -116,7 +116,7 @@ layout = dbc.Container([
     dbc.Row(lf.make_proteinHeader(id)), # Big header
     
     # first portion(search engin)
-    dbc.Row([lf.make_Subtitle("Global Search")]),
+    # dbc.Row([lf.make_Subtitle("Global Search")]),
     dbc.Row([
         # html.Datalist(id="search_suggestion_list", children=[html.Option(value=x) for x in search_info_list]),
         # dbc.InputGroup([
@@ -125,8 +125,9 @@ layout = dbc.Container([
         # ], className="mb-3"),
 
         html.Div([
+            html.H2("Find your protein", style={'text-align': 'center'}, className='mb-5'),
             dbc.InputGroup([
-                dbc.InputGroupText(html.I(className="fas fa-search")),
+                dbc.InputGroupText(html.I(className="fa-solid fa-search")),
                 html.Div([
                     dcc.Dropdown(
                         id='global_search',
@@ -135,11 +136,15 @@ layout = dbc.Container([
                     )
                 ], style={'flex-grow':'1'})
             ]),
-        ], className='mt-1 mb-5')
-    ], className='mt-5'),
+            html.H6("Examples: CALR, Calreticulin, P27797, HEK293T, human, EPAVYFK", className='my-1 mt-2'),
+        ], 
+        # className='mt-5 mb-5',
+        style={"margin-top": "12rem",
+        "margin-bottom": "12rem"},),
+    ], className='mt-4 mb-5 bg-light'),
 
     # second portion (general ocnfiguration dropdowns)
-    dbc.Row([lf.make_Subtitle("General Configuration")]),
+    dbc.Row([lf.make_Subtitle("Or select detailed information")]),
     dbc.Row([
         dbc.Col([
             html.Div([
@@ -156,8 +161,11 @@ layout = dbc.Container([
                         # dbc.Button([html.I(className="fa-solid fa-info")],id='first_level_btn_info')
                         dbc.Button([html.I(className="fa-solid fa-download")],id='download_species_button',  n_clicks=0),
                         dcc.Download(id="download_species_file"),
+                        dbc.Tooltip("Click to download excels", target="download_species_button"),
                     ])
-                ])
+                ]),
+
+                html.P("Examples: standard peptide, peptide mix, pure protein, proteome", className='my-1'),
             ], className='mt-1 mb-5')
         ], xs=12, lg=4, className='mt-5'),
         dbc.Col([
@@ -172,8 +180,10 @@ layout = dbc.Container([
                         # dbc.Button([html.I(className="fa-solid fa-info")],id='second_level_btn_info')
                         dbc.Button([html.I(className="fa-solid fa-download")],id='download_sample_button',  n_clicks=0),
                         dcc.Download(id="download_sample_file"),
+                        dbc.Tooltip("Click to download excels", target="download_sample_button"),
                     ])
-                ])
+                ]),
+                html.P("Examples: HEK293T, iPSC, brain", className='my-1'),
             ], className='mt-1 mb-5')
         ],xs=12, lg=4, className='mt-5'),
 
@@ -188,7 +198,9 @@ layout = dbc.Container([
                     # html.Div([
                     #     dbc.Button([html.I(className="fa-solid fa-info")],id='third_level_btn_info')
                     # ])
-                ])
+                ]),
+
+                html.P("Examples: CALR", className='my-1'),
             ], className='mt-1 mb-5')
         ],xs=12, lg=4, className='mt-5')
     ]),
@@ -205,7 +217,8 @@ layout = dbc.Container([
                     # html.Div([
                     #     dbc.Button([html.I(className="fa-solid fa-info")],id='partition_btn_info')
                     # ])
-                ])
+                ]),
+                html.P("Examples: REPAVYFK", className='my-1'),
             ], className='mt-1 mb-5')
         ],xs=12, lg=4, className='mt-5'),
         dbc.Col([
