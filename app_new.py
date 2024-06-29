@@ -6,7 +6,7 @@ from pages import home, protein, blankPage
 
 app = dash.Dash(
     __name__,
-    title="Arginylation",
+    title="Arginylation Database",
     external_stylesheets=[dbc.icons.FONT_AWESOME],
     # assets_folder='assets',
     suppress_callback_exceptions=True
