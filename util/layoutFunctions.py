@@ -66,7 +66,7 @@ def make_NavBar():
             #     label='More',
             # ),
         ],
-        brand='Arginylation',
+        brand='Arginylation Database',
         brand_href='/home',
         color='primary',
         fixed='top',
@@ -90,7 +90,7 @@ def make_homeHeader(idFunc):
     header = html.Div(
         dbc.Container([
             html.Div([
-                html.H2("Arginylation", className="display-4"),
+                html.H2("Arginylation Site Repository", className="display-4"),
                 # dbc.Button("Cite", id=idFunc("btn_citeHeader"),color="success", outline=True)
             ], className='d-flex justify-content-between align-items-center mb-0'),
             
@@ -131,13 +131,13 @@ def make_proteinHeader(idFunc):
     header = html.Div(
         dbc.Container([
             html.Div([
-                html.H2("Protein Visualization", className="display-4"),
+                html.H2("Visualization of Arginylated Proteins and Sites", className="display-4"),
                 # dbc.Button("Cite", id=idFunc("btn_citeHeader"),color="success", outline=True)
             ], className='d-flex justify-content-between align-items-center mb-0'),
             
             html.Hr(className="mt-0 mb-1"),
             html.Div([
-                html.P("ATE1 substrates summary", style={'font-size':'1.25rem'}),
+                html.P("PTM site and mass spectrometry data summary", style={'font-size':'1.25rem'}),
                 # html.H4(id=idFunc('moreInfoIcon'), className="fa-solid fa-book-open ms-3 mt-1 primary")
             ], className='d-flex mb-0'),
             # dbc.Collapse(
@@ -183,16 +183,20 @@ def make_CC_licenseBanner(idFunc):
 
     banner = html.Div([
         html.Hr(className="mt-2 mb-2"),
-        html.P(["Web-app developed by Chenfeng Zhao.",
+        html.P(["Web-app is developed by Chenfeng Zhao.",
             # dcc.Link("Chenfeng Zhao.",
             #     href="https://www.chenfengzhao.com/",
             #     target="_blank", className="me-3"),
         " Check source code at ",
             dcc.Link("Github",
-                href="add github link here",
+                href="https://github.com/ChenfengZhao/Arginylation",
                 target="_blank"),
         ]),
-        "This work is licensed under the ",
-        html.A(["MIT License"], rel='license', href="https://opensource.org/license/mit/")
+        html.P("Suggestions are always welcome at zongtao at wustl dot edu, we reply to every email."),
+        # "Suggestions are always welcome at zongtao at wustl dot edu, we reply to every email."
+        html.P(["Cite: Lin, Z., Xie, Y., Gongora, J., Liu, X., Zahn, E., Palai, B. B., ... & Garcia, B. A. An Unbiased Proteomic Platform for Activity-based Arginylation Profiling. ", html.I("bioRxiv"), ", 2024, ", html.A("https://doi.org/10.1101/2024.06.01.596974.", href = "https://doi.org/10.1101/2024.06.01.596974"), " PMID: 38854050."]),
+        html.P(["This work is licensed under the ",
+        html.A(["MIT License"], rel='license', href="https://opensource.org/license/mit/")]),
+        html.P("Updated on 06/29/2024."),
     ], id=idFunc("licenseBanner"), className='pt-5')
     return banner
