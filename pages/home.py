@@ -43,8 +43,10 @@ layout = dbc.Container([
     ]), className = 'align-items-center'),
     dbc.Row(html.Div([
         # "Add statics figures of the website here?"
-        html.Img(src='./assets/website figures-1.svg', alt='ABAP platform diagram', className='img-fluid'),
-        html.I("Activity-based arginylome profiling (ABAP) platform for arginylation discovery from biological samples. "),
+        # html.Img(src='./assets/website figures-1.svg', alt='ABAP platform diagram', className='img-fluid'),
+        html.Img(src='./assets/Asset 1.svg', alt='ABAP platform diagram', className='img-fluid'),
+        # html.I("Activity-based arginylome profiling (ABAP) platform for arginylation discovery from biological samples. "),
+        html.I("ATE1-based arginylome profiling (ABAP) platform for arginylation discovery from biological samples."),
         html.I(html.B("a, ")), 
         html.I("isotopic arginine labeling of proteome using ex vivo ATE1 assay. "),
         html.I(html.B("b, ")),
@@ -61,7 +63,8 @@ layout = dbc.Container([
             items=[
                 {'key': "1", 'src': "./assets/website figures-2.svg", 'alt': 'website functions and visulaization', "img_class_name" : 'fluid'},
                 {'key': "2", 'src': "./assets/website figures-3.svg", 'alt': 'website functions and visulaization', "img_class_name" : 'fluid'},
-                {'key': "3", 'src': "./assets/website figures-4.svg", 'alt': 'website functions and visulaization', "img_class_name" : 'fluid'},
+                # {'key': "3", 'src': "./assets/website figures-4.svg", 'alt': 'website functions and visulaization', "img_class_name" : 'fluid'},
+                {'key': "3", 'src': "./assets/Asset 4.svg", 'alt': 'website functions and visulaization', "img_class_name" : 'fluid'},
             ],
             # style={'height': '445px', 'position': 'center'},
             controls=True,
