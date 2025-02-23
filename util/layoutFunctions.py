@@ -197,6 +197,7 @@ def make_CC_licenseBanner(idFunc):
         html.P(["Cite: Lin, Z., Xie, Y., Gongora, J., Liu, X., Zahn, E., Palai, B. B., ... & Garcia, B. A. An Unbiased Proteomic Platform for Activity-based Arginylation Profiling. ", html.I("bioRxiv"), ", 2024, ", html.A("https://doi.org/10.1101/2024.06.01.596974.", href = "https://doi.org/10.1101/2024.06.01.596974"), " PMID: 38854050."]),
         html.P(["This work is licensed under the ",
         html.A(["MIT License"], rel='license', href="https://opensource.org/license/mit/")]),
-        html.P("Updated on 06/29/2024."),
+        # html.P("Updated on 06/29/2024."),
+        html.P("Updated on 02/22/2025."),
     ], id=idFunc("licenseBanner"), className='pt-5')
     return banner
